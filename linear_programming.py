@@ -73,7 +73,7 @@ try:
     print insideOrNot , result, counter, y
     print 'Unknowns are : ', y[:n]
 
-    p = np.zeros((m+n+1,1))
+    p = np.zeros((m + n + 1, 1))
     t0=time()
     insideOrNot , result, counter = triAlg.triangle_algo(csr_matrix(B.T, dtype=np.float32), csr_matrix(p.T[0], dtype=np.float64), 0.001)
     print "New Time taken %f seconds" % (time() - t0)

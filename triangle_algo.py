@@ -62,13 +62,13 @@ def triangle_algo(S, p, epsilon, dim):
             if len(pivots) == 0:
                 return False, p_prime, counter
             else:
-                vertex = pivots[pivot_distance.index(min(pivot_distance))]
+                vertex = pivots[pivot_distance.index(max(pivot_distance))]
                 vertex_index = S.index(vertex)
 
         #Step 2 : Compute the step size
             alpha = inner_prod(dim, diff(dim, p, p_prime), diff(dim, vertex, p_prime))/(distance(dim, vertex, p_prime)**2)
             # print alphas, alpha
-            alphas = [((1-alpha)*alphas[i] + alpha) if vertex_index == i else (1-alpha)*alphas[i] for i in range(len(alphas))]
+            alphas = [((1-alpha)*alphas[i] + alpha) if vertex_index == i else (1 - alpha) * alphas[i] for i in range(len(alphas))]
             # print alphas
             p_prime = []
             for i in range(dim):
@@ -83,12 +83,16 @@ def triangle_algo(S, p, epsilon, dim):
 
 # S = [v1,v2,v3]
 
-# inside the triangle
+# # inside the triangle
 # p = [3,2]
 
 # outside the triangle
 # p = [4,2]
-# 
+# epsilon = 0.1
+
+# insideOrNot , result, counter = triangle_algo(S, p, epsilon, len(p))
+# print ( insideOrNot, result, counter)
+
 
 # v1 = [0,0,0]
 # v2 = [0,4,0]
