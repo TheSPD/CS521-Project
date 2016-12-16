@@ -4,7 +4,7 @@ import numpy as np
 from time import time
 from potentialReduction import potentialReduction as potRed
 
-N = 512
+N = 100
 
 
 def pixel(image, pos, color):
@@ -18,7 +18,7 @@ def fillGrid(photo, grid, colors):
     """Fill the grid with the colors and grid matrix"""
     for i in range(N-1):
         for j in range(N-1):
-            pixel(photo, (i, j), colors[grid[i][j] % len(colors)])
+            pixel(photo, (N-i, j), colors[grid[i][j] % len(colors)])
 
 def getIter(i, j, N, Q):
     return potRed(np.array([[float(i) / N], [float(j) / N]], dtype=np.float64), Q, 1. / N)[1]
