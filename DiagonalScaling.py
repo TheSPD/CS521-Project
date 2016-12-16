@@ -9,7 +9,6 @@ def show_entry_fields():
     cG.plotGrid(Q, master)
 # print("First Name: %s\nLast Name: %s" % (e1.get(), e2.get()))
 
-print " llal "
 master = Tk.Tk()
 master.wm_title("Diagonal Scaling")
 Tk.Label(master, text="Enter a 2x2 PSD : ").grid(row=0)

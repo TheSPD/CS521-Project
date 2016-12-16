@@ -4,7 +4,7 @@ import numpy as np
 from time import time
 from potentialReduction import potentialReduction as potRed
 
-N = 100
+N = 512
 
 
 def pixel(image, pos, color):
